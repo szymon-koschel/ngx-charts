@@ -120,9 +120,9 @@ export class YAxisTicksComponent implements OnChanges, AfterViewInit {
   @Input() referenceLines;
   @Input() showRefLabels: boolean = false;
   @Input() showRefLines: boolean = false;
-  @Input() refLineColor: string = "#455066";
+  @Input() refLineColor: string = '#455066';
   @Input() refLineWidth: number = 1;
-  @Input() refLineStyle: string = "dashed";
+  @Input() refLineStyle: string = 'dashed';
   @Input() wrapTicks = false;
 
   @Output() dimensionsChanged = new EventEmitter();
@@ -284,16 +284,13 @@ export class YAxisTicksComponent implements OnChanges, AfterViewInit {
     );
     this.referenceLineLength = this.referenceLines.length;
 
-    if (this.refLineStyle == "dotted") {
-      this.referenceLineDasharray = (1 + this.refLineWidth) + ", " + (3 + this.refLineWidth);
-    }
-    else if (this.refLineStyle == "dashed") {
-      this.referenceLineDasharray = (5 + this.refLineWidth) + ", " + (5 + this.refLineWidth);
-    }
-    else if (this.refLineStyle == "solid") {
-      this.referenceLineDasharray = "0";
-    }
-    else {
+    if (this.refLineStyle == 'dotted') {
+      this.referenceLineDasharray = 1 + this.refLineWidth + ', ' + (3 + this.refLineWidth);
+    } else if (this.refLineStyle == 'dashed') {
+      this.referenceLineDasharray = 5 + this.refLineWidth + ', ' + (5 + this.refLineWidth);
+    } else if (this.refLineStyle == 'solid') {
+      this.referenceLineDasharray = '0';
+    } else {
       this.referenceLineDasharray = this.refLineStyle;
     }
 

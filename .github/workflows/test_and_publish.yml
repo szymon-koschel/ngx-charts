@@ -1,4 +1,4 @@
-name: Build, Test, and Deploy
+name: Build, Test, and Publish
 
 on: [push]
 jobs:
@@ -25,8 +25,7 @@ jobs:
         run: yarn install --immutable
 
       - name: Build
-        run: |
-          yarn build
+        run: npm run build:lib:prod
         env:
           CI: true
 
@@ -36,9 +35,8 @@ jobs:
         env:
           CI: true
 
-      - name: Prepare and deploy
-        run: |
-          npm run deploy -- --name="Koschel" --email="koschel.szymon@gmail.com"
+      - name: Publish
+        run: npm run publish:lib
         if: ${{ github.ref == 'refs/heads/master' }}
         env:
           CI: true
