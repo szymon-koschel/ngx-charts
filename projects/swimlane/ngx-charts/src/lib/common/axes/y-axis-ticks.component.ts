@@ -55,7 +55,7 @@ import { TextAnchor } from '../types/text-anchor.enum';
     </svg:g>
 
     <svg:path
-      *ngIf="referenceLineLength > 1 && refMax && refMin && showRefLines"
+      *ngIf="referenceLineLength > 1 && refMax && refMin && showRefLines && showRefArea"
       class="reference-area"
       [attr.d]="referenceAreaPath"
       [attr.transform]="gridLineTransform()"
@@ -82,7 +82,7 @@ import { TextAnchor } from '../types/text-anchor.enum';
         <svg:line
           class="refline-path gridline-path-horizontal"
           x1="0"
-          [attr.x2]="gridLineWidth"
+          [attr.x2]="gridLineWidth - 10"
           [attr.transform]="gridLineTransform()"
           [attr.stroke]="refLine.color ?? '#000000'"
           [attr.stroke-width]="refLineWidth"
@@ -121,6 +121,7 @@ export class YAxisTicksComponent implements OnChanges, AfterViewInit {
   @Input() referenceLines;
   @Input() showRefLabels: boolean = false;
   @Input() showRefLines: boolean = false;
+  @Input() showRefArea: boolean = false;
   @Input() refLineWidth: number = 1;
   @Input() refLineStyle: string = 'solid';
   @Input() wrapTicks = false;

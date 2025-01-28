@@ -1,6 +1,6 @@
 {
   "name": "@koschel/ngx-charts",
-  "version": "21.1.4",
+  "version": "21.1.5",
   "description": "Declarative Charting Framework for Angular",
   "repository": {
     "type": "git",

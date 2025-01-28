@@ -39,11 +39,7 @@ import { isPlatformServer } from '@angular/common';
     >
       <svg:defs>
         <svg:clipPath [attr.id]="clipPathId">
-          <svg:rect
-            [attr.width]="dims.width + 10"
-            [attr.height]="dims.height + 10"
-            [attr.transform]="'translate(-5, -5)'"
-          />
+          <svg:rect [attr.width]="dims.width" [attr.height]="dims.height + 10" [attr.transform]="'translate(-5, -5)'" />
         </svg:clipPath>
       </svg:defs>
       <svg:g [attr.transform]="transform" class="line-chart chart">
@@ -78,7 +74,7 @@ import { isPlatformServer } from '@angular/common';
           [referenceLines]="referenceLines"
           [showRefLines]="showRefLines"
           [showRefLabels]="showRefLabels"
-          [refLineColor]="refLineColor"
+          [showRefArea]="showRefArea"
           [refLineWidth]="refLineWidth"
           [refLineStyle]="refLineStyle"
           [wrapTicks]="wrapTicks"
@@ -234,7 +230,7 @@ export class LineChartComponent extends BaseChartComponent implements OnInit {
   @Input() showRefLines: boolean = false;
   @Input() referenceLines: any;
   @Input() showRefLabels: boolean = true;
-  @Input() refLineColor: string = '#455066';
+  @Input() showRefArea: boolean = false;
   @Input() refLineWidth: number = 1;
   @Input() refLineStyle: string = 'dashed';
   @Input() xScaleMin: number;
