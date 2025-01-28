@@ -84,7 +84,7 @@ import { TextAnchor } from '../types/text-anchor.enum';
           x1="0"
           [attr.x2]="gridLineWidth"
           [attr.transform]="gridLineTransform()"
-          [attr.stroke]="refLineColor"
+          [attr.stroke]="refLine.color ?? '#000000'"
           [attr.stroke-width]="refLineWidth"
           [attr.stroke-dasharray]="referenceLineDasharray"
         />
@@ -96,6 +96,7 @@ import { TextAnchor } from '../types/text-anchor.enum';
             [attr.y]="-6"
             [attr.x]="gridLineWidth"
             [attr.text-anchor]="textAnchor"
+            [attr.fill]="refLine.color ?? '#000000'"
           >
             {{ refLine.name }}
           </svg:text>
@@ -120,9 +121,8 @@ export class YAxisTicksComponent implements OnChanges, AfterViewInit {
   @Input() referenceLines;
   @Input() showRefLabels: boolean = false;
   @Input() showRefLines: boolean = false;
-  @Input() refLineColor: string = '#455066';
   @Input() refLineWidth: number = 1;
-  @Input() refLineStyle: string = 'dashed';
+  @Input() refLineStyle: string = 'solid';
   @Input() wrapTicks = false;
 
   @Output() dimensionsChanged = new EventEmitter();

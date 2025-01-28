@@ -32,7 +32,6 @@ import { ViewDimensions } from '../types/view-dimension.interface';
         [referenceLines]="referenceLines"
         [showRefLines]="showRefLines"
         [showRefLabels]="showRefLabels"
-        [refLineColor]="refLineColor"
         [refLineWidth]="refLineWidth"
         [refLineStyle]="refLineStyle"
         [height]="dims.height"
