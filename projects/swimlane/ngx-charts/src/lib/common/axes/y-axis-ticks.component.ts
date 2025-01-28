@@ -81,8 +81,8 @@ import { TextAnchor } from '../types/text-anchor.enum';
       <svg:g *ngIf="showRefLines" [attr.transform]="transform(refLine.value)">
         <svg:line
           class="refline-path gridline-path-horizontal"
-          x1="0"
-          [attr.x2]="gridLineWidth - 10"
+          x1="5"
+          [attr.x2]="gridLineWidth - 5"
           [attr.transform]="gridLineTransform()"
           [attr.stroke]="refLine.color ?? '#000000'"
           [attr.stroke-width]="refLineWidth"
