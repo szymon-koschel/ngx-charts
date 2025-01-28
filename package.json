@@ -24,7 +24,7 @@
     "deploy": "angular-cli-ghpages --dir ./dist/ngx-charts --no-silent",
     "package": "run-s build:lib:prod copy-files",
     "prepublish:lib": "npm run package",
-    "publish:lib": "npm publish --provenance --access public ./dist/swimlane/ngx-charts",
+    "publish:lib": "npm publish --access public ./dist/swimlane/ngx-charts",
     "publish:lib:beta": "npm publish ./dist/swimlane/ngx-charts --tag beta",
     "prepack": "npm run package",
     "pack": "npm pack ./dist/swimlane/ngx-charts",
