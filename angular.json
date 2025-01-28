@@ -110,7 +110,7 @@
         }
       }
     },
-    "@swimlane/ngx-charts": {
+    "@koschel/ngx-charts": {
       "projectType": "library",
       "root": "projects/swimlane/ngx-charts",
       "sourceRoot": "projects/swimlane/ngx-charts/src",
