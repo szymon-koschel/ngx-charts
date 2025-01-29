@@ -134,7 +134,8 @@ export class LineSeriesComponent implements OnChanges {
         return value;
       })
       .y(d => this.yScale(d.value))
-      .curve(this.curve);
+      .curve(this.curve)
+      .defined(d => d.value !== null);
   }
 
   getRangeGenerator(): any {
@@ -153,7 +154,8 @@ export class LineSeriesComponent implements OnChanges {
       })
       .y0(d => this.yScale(typeof d.min === 'number' ? d.min : d.value))
       .y1(d => this.yScale(typeof d.max === 'number' ? d.max : d.value))
-      .curve(this.curve);
+      .curve(this.curve)
+      .defined(d => d.value !== null);
   }
 
   getAreaGenerator(): any {
