@@ -228,7 +228,7 @@ export class LineChartComponent extends BaseChartComponent implements OnInit {
   @Input() roundDomains: boolean = false;
   @Input() tooltipDisabled: boolean = false;
   @Input() showRefLines: boolean = false;
-  @Input() referenceLines: any;
+  @Input() referenceLines: any[];
   @Input() showRefLabels: boolean = true;
   @Input() showRefArea: boolean = false;
   @Input() refLineWidth: number = 1;
@@ -399,6 +399,10 @@ export class LineChartComponent extends BaseChartComponent implements OnInit {
     const values = [...domain];
     if (!this.autoScale) {
       values.push(0);
+    }
+
+    for (const line of this.referenceLines) {
+      values.push(line.value);
     }
 
     const min = this.yScaleMin ? this.yScaleMin : Math.min(...values);
