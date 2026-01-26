@@ -1940,18 +1940,11 @@
       </div>
     }
     @if (chartType === 'bubble-chart-interactive-demo') {
-      <div
-        class="chart-container"
-        style="padding: 10px; border: 1px solid white"
-      >
+      <div class="chart-container" style="padding: 10px; border: 1px solid white">
         <div>
           <span class="active">{{ getBubbleInteractiveTitle() }}</span>
           @if (bubbleShowDrillDownResetLink()) {
-            <button
-              class="btn btn-link"
-              style="float: right"
-              (click)="onClickResetBubbleInteractiveDrill()"
-            >
+            <button class="btn btn-link" style="float: right" (click)="onClickResetBubbleInteractiveDrill()">
               <span>Go Back</span>
             </button>
           }
